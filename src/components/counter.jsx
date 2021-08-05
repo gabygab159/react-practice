@@ -3,7 +3,8 @@ import React, {useState} from 'react'
 export default function Counter() {
   const [state, setState] = useState({
     count: 0,
-    imgUrl: 'https://picsum.photos/200'
+    imgUrl: 'https://picsum.photos/200',
+    tags:['tag1', 'tag2', 'tag3']
   }) 
   function Change(){
     return state.count === 0 ? 'Zero' : state.count
@@ -19,6 +20,9 @@ export default function Counter() {
       <img src={state.imgUrl} alt=""/>
       <span className={getClass()}>{ Change() }</span>
       <button className='btn btn-primary'>Increment</button>
+      <ul><li>
+      {state.tags.map(tag =><li key={tag}>{tag}</li>)}
+      </li></ul>
     </React.Fragment>
   )
 }
