@@ -4,8 +4,17 @@ export default function Counter() {
   const [state, setState] = useState({
     count: 0,
     imgUrl: 'https://picsum.photos/200',
-    tags:['tag1', 'tag2', 'tag3']
+    tags:['tag1', 'tag2']
   }) 
+
+  function renderTags() {
+    if(state.tags.length === 0) return <p>'there are no tags'</p>;
+    return  <ul>
+              <li>
+                {state.tags.map(tag =><li key={tag}>{tag}</li>)}
+              </li>
+            </ul>
+  }
   function Change(){
     return state.count === 0 ? 'Zero' : state.count
   }
@@ -20,9 +29,10 @@ export default function Counter() {
       <img src={state.imgUrl} alt=""/>
       <span className={getClass()}>{ Change() }</span>
       <button className='btn btn-primary'>Increment</button>
-      <ul><li>
+      {renderTags()}
+      {/* <ul><li>
       {state.tags.map(tag =><li key={tag}>{tag}</li>)}
-      </li></ul>
+      </li></ul> */}
     </React.Fragment>
   )
 }
