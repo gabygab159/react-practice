@@ -1,7 +1,13 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 export default function Counter() {
+  const [state, setState] = useState({
+    count: 0
+  }) 
   return(
-    <h1>Counter Component</h1>
+    <React.Fragment>
+      <span>{ state.count }</span>
+      <button>Increment</button>
+    </React.Fragment>
   )
 }
