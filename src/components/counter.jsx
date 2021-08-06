@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 export default function Counter() {
   const [state, setState] = useState({
-    imgUrl: "https://picsum.photos/200",
-    tags: ["tag1", "tag2"],
+    tags: [],
   });
 
   const [count, setCount] = useState(0);
@@ -36,7 +35,6 @@ export default function Counter() {
   }
   return (
     <React.Fragment>
-      <img src={state.imgUrl} alt="" />
       <span className={getClass()}>{Change()}</span>
       <button onClick={handleIncrement} className="btn btn-primary">
         Increment
