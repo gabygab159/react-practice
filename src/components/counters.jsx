@@ -17,13 +17,24 @@ export default function Counters() {
     },
   ]);
 
+  const handleDelete = (id) => {
+    let newCounters = counters.filter((counter) => counter.id !== id);
+    // return newCounters;
+    setCounters(newCounters);
+  };
+
   return (
     <div>
       {[
         ...counters.map((counter) => (
           <div>
             <h3>Title</h3>
-            <Counter key={counter.id} value={counter.value} />
+            <Counter
+              key={counter.id}
+              value={counter.value}
+              countId={counter.id}
+              onDelete={handleDelete}
+            />
           </div>
         )),
       ]}

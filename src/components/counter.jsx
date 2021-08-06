@@ -40,6 +40,12 @@ export default function Counter(props) {
       <button onClick={handleIncrement} className="btn btn-primary">
         Increment
       </button>
+      <button
+        className="btn btn-danger btn-sm m-2"
+        onClick={() => props.onDelete(props.countId)}
+      >
+        Delete
+      </button>
       {renderTags()}
     </React.Fragment>
   );
