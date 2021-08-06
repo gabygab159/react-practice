@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function Counter() {
+export default function Counter(props) {
   const [state, setState] = useState({
     tags: [],
   });
@@ -35,6 +35,7 @@ export default function Counter() {
   }
   return (
     <React.Fragment>
+      {props.value}
       <span className={getClass()}>{Change()}</span>
       <button onClick={handleIncrement} className="btn btn-primary">
         Increment
