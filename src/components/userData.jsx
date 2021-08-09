@@ -1,3 +1,3 @@
-export default function UserData() {
-  return <h3>User Data component</h3>;
+export default function UserData(props) {
+  return <button onClick={props.handleLogout}>Log Out</button>;
 }
