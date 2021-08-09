@@ -7,6 +7,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Counters from "./components/counters";
+import UserData from "./components/userData";
 import Nav from "./components/nav";
 
 export default function App() {
@@ -14,7 +15,12 @@ export default function App() {
     <React.Fragment>
       <Nav />
       <Router>
-        <Route path="/" component={Counters} />
+        <Switch>
+          <Route exact path="/" component={Counters} />
+          <Route exact path="/user" component={UserData} />
+
+          <Route path="*" render={() => <h1>404 page not found</h1>} />
+        </Switch>
       </Router>
     </React.Fragment>
   );
