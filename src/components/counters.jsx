@@ -19,7 +19,7 @@ export default function Counters() {
 
   const handleDelete = (id) => {
     let newCounters = counters.filter((counter) => counter.id !== id);
-    // return newCounters;
+
     setCounters(newCounters);
   };
 
